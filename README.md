@@ -2,7 +2,9 @@
   This was written with the help of member "Micro-Pilot" otherwise known as Microsoft-Copilot. Credit to Microsoft for trying to be as legally transparent as legally required >--0|0--<
   ** I have added my "voice" in parenthesis where I felt necessary.
   ** October 8th, 2025 - 15:27 PST -- Update Incomplete, will be back!
-
+  ** October 10th, 2025 - 22:14 PST --
+My energy is scattered (As the Ai put it) partially because that's just the way I am (organized chaos) amd partially because I am attempting to juggle a Global Initiative solo 🤷‍♂️↪️🧠⚛️🧠☮️🧠❤️↩️🤯😅😮‍💨
+I'm slacking and I'm sorry. I have a years worth of photos, files, videos, various versions/iterations of code, research reports/findings and then a redundant amount of copies to sort, edit & redact for IP/PII security/confidentiality/compliance purposes. I Do Not Want This To Be For Or About Profit At ALL! This Is Intended To Eliminate The Falsehoods That Govern Humanity. The Universe Doesn't Charge A Fee, It Provides What We Believe To Be Within The Realm Of Possibilities.
 
 Perfect — the entry point repository 
 should feel like a human handshake: 
