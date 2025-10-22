@@ -1,0 +1,73 @@
+import argparse
+import struct
+
+# Define instruction set (example, extendable)
+INSTRUCTIONS = {
+    'ADD': 0x01,
+    'SUB': 0x02,
+    'MUL': 0x03,
+    'DIV': 0x04,
+    'LOAD': 0x05,
+    'STORE': 0x06,
+    'JMP': 0x07,
+    'JZ': 0x08,
+    'JNZ': 0x09,
+    'LEDGER_UPDATE': 0x0A,
+    'TRACE': 0x0B
+}
+
+# Registers
+REGISTERS = {
+    'R0': 0,
+    'R1': 1,
+    'R2': 2,
+    'R3': 3,
+    'R4': 4,
+    'R5': 5,
+    'R6': 6,
+    'R7': 7
+}
+
+WORD_SIZE = 8  # 64-bit word
+
+# Encode a single instruction into 64-bit little-endian
+def encode_instruction(op, rd, rs1, rs2, imm):
+    opcode = INSTRUCTIONS[op] & 0xFF
+    rd_val = REGISTERS[rd] & 0x0F
+    rs1_val = REGISTERS[rs1] & 0x0F
+    rs2_val = REGISTERS[rs2] & 0x0F
+    imm_val = imm & 0xFFFFFFFFFFFF  # 48 bits for immediate
+
+    # Pack fields into 64-bit instruction: | opcode(8) | rd(4) | rs1(4) | rs2(4) | imm(48) |
+    instruction = (opcode << 56) | (rd_val << 52) | (rs1_val << 48) | (rs2_val << 44) | imm_val
+    return struct.pack('<Q', instruction)  # Little-Endian
+
+# Assemble program from .lum file
+def assemble(file_path, output_bin):
+    with open(file_path, 'r') as f:
+        lines = [line.strip() for line in f if line.strip() and not line.startswith(';')]
+
+    binary = b''
+
+    for line in lines:
+        parts = line.split()
+        op = parts[0].upper()
+        rd = parts[1].upper() if len(parts) > 1 else 'R0'
+        rs1 = parts[2].upper() if len(parts) > 2 else 'R0'
+        rs2 = parts[3].upper() if len(parts) > 3 else 'R0'
+        imm = int(parts[4], 0) if len(parts) > 4 else 0
+
+        binary += encode_instruction(op, rd, rs1, rs2, imm)
+
+    with open(output_bin, 'wb') as out:
+        out.write(binary)
+
+    print(f'Assembled {len(lines)} instructions into {output_bin}')
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Lumen-Lux-Web x64-bit Assembler')
+    parser.add_argument('source', help='Source .lum file')
+    parser.add_argument('-o', '--output', default='sample.bin', help='Output binary file')
+    args = parser.parse_args()
+
+    assemble(args.source, args.output) 
