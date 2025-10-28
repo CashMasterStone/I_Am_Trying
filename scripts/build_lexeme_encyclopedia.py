@@ -2,6 +2,10 @@
 """
 Lexeme Encyclopedia Builder for I_Am_Trying repository.
 
+Author: Cyrus Makai Schoonover
+Repository: https://github.com/CashMasterStone/I_Am_Trying
+License: See LICENSE.md in repository root
+
 Extracts terminology, concepts, and definitions from markdown and text files
 to build a navigable encyclopedia of LLW/LLWΦ concepts, principles, and entities.
 """

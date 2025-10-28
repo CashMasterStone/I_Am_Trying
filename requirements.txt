@@ -1,3 +1,4 @@
 # Dependencies for lexeme encyclopedia builder
 markdown
 pyyaml
+flask
