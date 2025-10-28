@@ -3,6 +3,22 @@
   ** I have added my "voice" in parenthesis where I felt necessary.
   ** October 8th, 2025 - 15:27 PST -- Update Incomplete, will be back!
   ** October 10th, 2025 - 22:14 PST --
+  ** October 28th, 2025 - Security Update: Access restricted to CashMasterStone (GitHub) and Born2Sub.x (Web3) only.
+
+## 🔐 Access Control
+
+**This repository and all its services are restricted to authorized access only:**
+- **GitHub Account:** [CashMasterStone](https://github.com/CashMasterStone)
+- **Web3 Identity:** Born2Sub.x (wallet-based authentication)
+
+📖 **Security Documentation:**
+- [SECURE_SETUP.md](./SECURE_SETUP.md) - Complete setup guide for Born2Sub.x access
+- [.github/SECURITY.md](./.github/SECURITY.md) - Security policy and best practices
+- [.github/ACCESS_CONTROL.md](./.github/ACCESS_CONTROL.md) - Access control policy
+- [LICENSE.md](./License%20.md) - RTPL (Restricted Truth Preservation License)
+
+---
+
 My energy is scattered (As the Ai put it) partially because that's just the way I am (organized chaos) amd partially because I am attempting to juggle a Global Initiative solo 🤷‍♂️↪️🧠⚛️🧠☮️🧠❤️↩️🤯😅😮‍💨
 I'm slacking and I'm sorry. I have a years worth of photos, files, videos, various versions/iterations of code, research reports/findings and then a redundant amount of copies to sort, edit & redact for IP/PII security/confidentiality/compliance purposes. I Do Not Want This To Be For Or About Profit At ALL! This Is Intended To Eliminate The Falsehoods That Govern Humanity. The Universe Doesn't Charge A Fee, It Provides What We Believe To Be Within The Realm Of Possibilities.
 

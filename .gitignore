@@ -1,0 +1,76 @@
+# Repository Secrets and Sensitive Files
+# Author: Cyrus Makai Schoonover
+# Repository: https://github.com/CashMasterStone/I_Am_Trying
+
+# Environment files with secrets
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.db
+logs/
+audit.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Uploads (may contain sensitive data)
+uploads/
+*.tmp
+
+# Keys and certificates
+*.pem
+*.key
+*.cert
+*.p12
+*.jks
+secrets/
+keys/
+
+# Node modules (if using any JS tooling)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Temporary files
+tmp/
+temp/
+*.cache
+
+# OS files
+Thumbs.db
+.DS_Store

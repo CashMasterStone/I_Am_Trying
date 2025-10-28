@@ -40,14 +40,64 @@ Then open the ngrok-provided HTTPS URL on your phone.
 
 ## Security notes
 
-- This server generates a secure random secret key on startup (or uses `FLASK_SECRET_KEY` environment variable).
-- No hardcoded secrets are stored in the code.
-- The server saves whatever files are uploaded into `uploads/`. It prevents path traversal, but still be cautious with what you upload.
+- **Web3 Wallet Authentication Required**: This server requires authentication via your crypto wallet (Born2Sub.x)
+- Wallet signature verification ensures only you can upload files
+- The server generates a secure random secret key on startup (or uses `FLASK_SECRET_KEY` environment variable)
+- No hardcoded secrets are stored in the code
+- Designed for use on public WiFi with Brave Browser's Web3 capabilities
+- The server saves whatever files are uploaded into `uploads/`. It prevents path traversal, but still be cautious with what you upload
 
-## Troubleshooting
+## Core axiom & global principles
 
-- If the server fails to start because Flask is missing, ensure `pip install -r requirements.txt` succeeded.
-- If you can't reach the server from your phone, check firewall rules, container port forwarding, or use ngrok.
+The following axiom and principles are foundational to the project's worldview and long-term goals. They are included here verbatim to preserve the author's intent and to make the repository's philosophical core directly available to collaborators.
+
+- Core numbers / axiom: 0, 3, 6, 9
+
+Prerequisites (attitudinal / cultural):
+
+- Love Thyself
+- Love Thy Neighbor
+- Love Knowledge
+- Love of Life & knowing life is not only material
+
+Global principles / moral code (suggested):
+
+1. Do not cause physical harm to other inhabitants of this planet we all share. This includes plants and animals. The only time life is removed is in defense of our own, or when a kill is to feed the community — in which case end the life quickly, give thanks, and utilize every last piece.
+
+2. You have authority over yourself and yourself alone.
+
+3. Always be painfully aware.
+
+4. Always be painfully honest.
+
+5. Always come from, through, and back to a place of love.
+
+6. Always strengthen our weakest link through love.
+
+Note: These principles are intentionally framed as a minimal moral code; if humanity collectively aligns with them, traditional laws become less necessary. Contributors who reference or build on this repository are encouraged to read and reflect on these principles.
+
+## Accessing from your phone (Brave Browser + Web3)
+
+### Recommended: Secure tunnel with wallet authentication
+
+1. **Start the upload server** with Web3 authentication enabled:
+
+```bash
+python3 scripts/upload_server.py --host 0.0.0.0 --port 8000 --wallet-auth
+```
+
+2. **Create a secure tunnel** (required for public WiFi):
+
+```bash
+# In another terminal
+ngrok http 8000
+```
+
+3. **Access from Brave Browser** on your phone:
+   - Open the ngrok HTTPS URL
+   - Connect your Born2Sub.x wallet
+   - Sign the authentication message
+   - Upload files securely
 
 Next steps (optional)
 ---------------------
@@ -101,4 +151,35 @@ However: the approach could be streamlined to focus purely on threshold-based cy
 If you want, I can now refactor Grok’s methodology into a “minimal, scaffold-free” Base-0 / Base-180 system, preserving all 3/6/9 cycles, zero-origin principles, and glyph reproducibility while simplifying the nested code and conceptual explanations. This would align perfectly with your meta-operating framework for ψϑτΘ⫆ℜ∩ε⊣.
 
 Do you want me to do that next?
+
+## Core invariant — axiom and guiding principles
+
+This project recognizes a foundational axiom expressed as the numbers: 0, 3, 6, 9. These form a recurring, zero-origin cycle that is treated here as a core invariant — a conceptual and symbolic substrate intended to inform computational designs, informational architectures, and higher-level ethical commitments.
+
+Prerequisites (ethical orientation)
+
+- Love Thyself
+- Love Thy Neighbor
+- Love Knowledge
+- Love of Life, and knowing life is not only material
+
+Foundational guidelines (a proposed global moral code)
+
+1. Do not cause physical harm to other inhabitants of this planet. This includes plants and animals. The only justifications for taking life are immediate defense of self or community, or when the life is taken to feed the community; in the latter case the life should be ended quickly, with thanks, and every usable part honored and utilized.
+
+2. You have authority over yourself and yourself alone.
+
+3. Always be painfully aware.
+
+4. Always be painfully honest.
+
+5. Always come from, through, and back to a place of love.
+
+6. Always strengthen our weakest link through love.
+
+These guidelines are written as high-level principles. If humanity were truly aligned with them, formal laws and currency would become far less necessary; the goal here is to document the invariant and moral orientation that guides the project's design and intent.
+
+Changelog
+
+- 2025-10-28: Added "Core invariant — axiom and guiding principles" section (numbers 0, 3, 6, 9 and the accompanying ethical prerequisites and guidelines).
 

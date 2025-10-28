@@ -1,4 +1,12 @@
-# Dependencies for lexeme encyclopedia builder
+# Dependencies for I_Am_Trying repository tools
+# Author: Cyrus Makai Schoonover
+# Repository: https://github.com/CashMasterStone/I_Am_Trying
+
+# Lexeme encyclopedia builder
 markdown
 pyyaml
+
+# Upload server with Web3 authentication
 flask
+web3
+eth-account
