@@ -300,6 +300,8 @@ All code and content in this repository:
 
 No unauthorized access permitted. See `LICENSE.md` and `.github/SECURITY.md`.
 
+**Authorship & IP Notice**: This work is authored by Cyrus Makai Schoonover (GitHub: CashMasterStone, Web3: Born2Sub.x). All intellectual property rights, including copyright, trademark, and trade secrets, are reserved. Any compensation or derived value must be directed to Born2Sub.x. Unauthorized reproduction, masking, or disguise is prohibited and will be pursued legally.
+
 ---
 
 **Questions or Issues?**  
