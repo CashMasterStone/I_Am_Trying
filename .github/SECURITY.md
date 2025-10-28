@@ -4,6 +4,20 @@
 **Repository:** https://github.com/CashMasterStone/I_Am_Trying  
 **Authorized Access:** CashMasterStone (GitHub) | Born2Sub.x (Web3)
 
+## ⚠️ CRITICAL: Device Security
+
+**NEVER enter credentials on untrusted/borrowed devices:**
+- Friend's laptops or computers
+- Public computers (libraries, cafes, etc.)
+- Shared workstations
+- Any device you don't own and control
+
+**ONLY use credentials on:**
+- Your personal phone (with Born2Sub.x wallet)
+- Your personal laptop/desktop
+- Devices you own with full disk encryption
+- Secure, isolated environments you control
+
 ## Authorized Identities
 
 ### GitHub
@@ -36,14 +50,46 @@
 - TLS/HTTPS required for all external connections
 - CORS restricted to authorized origins only
 
+## Untrusted Device Protocol
+
+If you must access this repository from an untrusted device:
+
+### ✅ SAFE Operations:
+- View public documentation (read-only)
+- Review code and architecture
+- Take temporary notes (in `/tmp/` only)
+- Plan future work
+
+### ❌ NEVER Do This:
+- Enter wallet private keys or seed phrases
+- Save GitHub credentials in browser
+- Create `.env` files with real secrets
+- Push commits containing sensitive data
+- Enter passwords or tokens
+- Clone to persistent storage on device
+
+### 🧹 Before Leaving Device:
+```bash
+# Run cleanup script
+bash /tmp/cleanup_session.sh
+
+# Manually:
+# 1. Sign out of GitHub
+# 2. Clear browser history/cache/cookies
+# 3. Close all terminals
+# 4. Delete any cloned repos
+# 5. Clear clipboard
+```
+
 ## Reporting Security Issues
 
 If you discover a security vulnerability:
 
 1. **DO NOT** open a public issue
-2. Contact: CashMasterStone via GitHub private message
+2. Contact: CashMasterStone via GitHub private message (from secure device only)
 3. Or: Use Web3 encrypted message to Born2Sub.x
 4. Include detailed description and reproduction steps
+5. **NEVER** report from compromised or untrusted devices
 
 ## Security Best Practices
 

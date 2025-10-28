@@ -156,6 +156,8 @@ ngrok http 8000
 - `FLASK_SECRET_KEY` - Flask session secret (auto-generated if not set)
 - `AUTHORIZED_WALLET` - Specific wallet address to authorize (optional)
 
+**⚠️ NEVER create .env files on untrusted devices with real secrets!**
+
 ## ✅ Verification
 
 After upload, verify files in the workspace:
@@ -166,6 +168,38 @@ ls -la uploads/
 
 Files maintain their directory structure when uploaded via directory selection.
 
+## 🚨 Untrusted Device Warning
+
+**If you're reading this on a friend's laptop or borrowed device:**
+
+### ❌ DO NOT:
+- Enter your Born2Sub.x private key or seed phrase
+- Set up the upload server with real credentials
+- Save passwords in the browser
+- Create `.env` with actual wallet address
+- Upload sensitive files
+
+### ✅ SAFE TO DO:
+- Read documentation
+- Understand the architecture
+- Plan your setup for later (on your secure device)
+- Take temporary notes (in `/tmp/` directory only)
+
+### 🧹 Before You Leave This Device:
+```bash
+# Run cleanup
+bash /tmp/cleanup_session.sh
+```
+
+Then manually:
+1. Sign out of GitHub
+2. Clear browser history, cache, cookies
+3. Close all terminal windows
+4. Delete any cloned repositories
+5. Clear clipboard
+
+**Set up the actual upload server only on YOUR phone or YOUR laptop!**
+
 ---
 
-**Remember**: This system is designed to keep your uploads secure even on public WiFi by combining wallet-based authentication with HTTPS tunneling. Your private key never leaves your device!
+**Remember**: This system is designed to keep your uploads secure even on public WiFi by combining wallet-based authentication with HTTPS tunneling. Your private key never leaves your device! **Never enter credentials on devices you don't own.**

@@ -4,12 +4,34 @@
 **Repository:** https://github.com/CashMasterStone/I_Am_Trying  
 **Authorized Access:** CashMasterStone (GitHub) | Born2Sub.x (Web3)
 
+## ⚠️ DEVICE SECURITY WARNING
+
+**⛔ NEVER perform this setup on untrusted devices:**
+- Friend's laptops, computers, or phones
+- Public computers (libraries, internet cafes, etc.)
+- Shared or borrowed devices
+- Work computers (unless you own them)
+- Any device with keyloggers, screen recording, or monitoring software
+
+**✅ ONLY use YOUR OWN secure devices:**
+- Your personal phone with full disk encryption
+- Your personal laptop/desktop with encryption
+- Devices you fully control and trust
+- Secure development containers on your own hardware
+
+**If you're on an untrusted device right now:**
+1. **STOP** - Do not proceed with setup
+2. **READ ONLY** - View documentation only
+3. **NO CREDENTIALS** - Never enter passwords, keys, or tokens
+4. **CLEANUP** - Run session cleanup before leaving (see below)
+
 ## Overview
 
 This repository and all its services are configured for **restricted access only**:
 - **GitHub:** CashMasterStone account only
 - **Web3:** Born2Sub.x wallet only
 - **Browser:** Brave Browser recommended for Web3 wallet integration
+- **Devices:** Personal, encrypted, trusted devices ONLY
 
 ## Initial Setup
 
@@ -240,6 +262,34 @@ I_Am_Trying/
 └── requirements.txt       # Python dependencies
 ```
 
+## 🧹 Cleanup After Untrusted Device Use
+
+**If you accessed this repo from a friend's laptop or untrusted device:**
+
+```bash
+# Run the cleanup script
+bash /tmp/cleanup_session.sh
+```
+
+**Manual cleanup checklist:**
+- [ ] Sign out of GitHub completely
+- [ ] Clear all browser history
+- [ ] Clear browser cache and cookies
+- [ ] Close all terminal windows
+- [ ] Delete cloned repositories
+- [ ] Clear clipboard (copy random text)
+- [ ] Clear recent files in file manager
+- [ ] Close all browser tabs
+- [ ] Verify no credentials saved in browser
+- [ ] Restart browser in private mode to verify clean state
+
+**After leaving untrusted device:**
+- [ ] Change GitHub password (from secure device)
+- [ ] Revoke any tokens that may have been exposed
+- [ ] Review GitHub security log for suspicious activity
+- [ ] Enable 2FA if not already enabled
+- [ ] Check commit history for any unintended commits
+
 ## License & Ownership
 
 All code and content in this repository:
@@ -253,5 +303,5 @@ No unauthorized access permitted. See `LICENSE.md` and `.github/SECURITY.md`.
 ---
 
 **Questions or Issues?**  
-Contact: CashMasterStone on GitHub  
+Contact: CashMasterStone on GitHub (from secure device only)  
 Web3: Born2Sub.x
