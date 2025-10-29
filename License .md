@@ -1,4 +1,4 @@
-#Innovation Protection License (SIPL) v1.0
+Innovation Protection License (SIPL) v1.0
 
 Copyright © 2014 Cyrus Makai Schoonover  
 All rights reserved except as expressly granted herein.
