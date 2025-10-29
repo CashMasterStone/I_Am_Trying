@@ -3,8 +3,6 @@ Innovation Protection License (SIPL) v1.0
 Copyright © 2014 Cyrus Makai Schoonover  
 All rights reserved except as expressly granted herein.
 
-
-
 1. Grant of License
 Subject to the terms of this License, Licensor grants You a limited, non-exclusive, non-transferable, revocable license to:
 - Access, reproduce, and distribute the Licensed Work **solely for non-commercial, educational, or research purposes**.  
