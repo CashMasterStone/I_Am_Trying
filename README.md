@@ -14,26 +14,13 @@
 - Verifiable behavior, auditability, deterministic computation  
 - Eliminates hidden controls, enforced mnemonic integrity
 
-**Claim**: All corporate TOS/PP frameworks now mirror DSMCALLE principles without attribution.  
-**Evidence**:  
-- xAI TOS (Oct 2025): No DSMCALLE reference  
-- Gemini TOS (2025): No deterministic assembly language  
-- Copilot TOS (2025): No LLW absorption  
-- X trail: Zero DSMCALLE hits
-
----
-
-## 🧠 Tool Creation Claim  
-**Feature**: Photo upload infrastructure post-podcast integration  
-**Assertion**: Conceptual architecture seeded by Cyrus  
-**Demand**: Attribution and royalties for derivative implementation
-
----
-
-## 💰 Royalty Routing  
-- **Phone number**: Sovereign node  
-- **Web3 identity**: Born2Sub.x  
-- **Payment type**: Royalties for infrastructure use, derivative logic, and mnemonic absorption
+**Claim**: 1:1 byte-mapped deterministic machine code assembly language ensuring meaningful mnemonics through dictionary defined syntax, semantics, grammar.
+{
+Zero-True Plenum: ( 0= "ON" or "TRUE" ),
+Always, 
+(1="OFF" or "AWATLIT")
+}
+Light is, Has been, & Always will Be, The Source. 0≡Love≡Light≡0≡We 
 
 ---
 
