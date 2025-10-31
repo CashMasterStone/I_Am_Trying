@@ -1,31 +1,11 @@
-# Copilot Instructions
-
-## Repository Context
-- This repo is a narrative and architectural staging ground for the LLW stack, not an implementation codebase.
-- LLW (fields/units/interactions) is the physics-aligned substrate; LLWΦ carries semantic policy and interpretation layers.
-- Documents mix technical roadmaps with personal narrative; preserve the author’s voice and tone when editing prose.
-
-## Key Knowledge Sources
-- `## Flip overview.md` — canonical plan for the "flip" that naturalizes LLW and externalizes LLWΦ semantics; study its op families, invariants, and workflow.
-- `Analyzing the flip.txt` — details cryptographic "device-as-witness" integrations and how provenance hashing should evolve.
-- `longitudinal-selfDive.md` — forensic/psychological synthesis that explains the stakeholder context; informs tone and intent.
-- `Lumen_OG-Gr0k.txt` — describes the Lumen assembly concept used when referencing quantum/bio-inspired execution.
-- `README.md` — front-door narrative, linking this repo to adjacent ones (AI-FORENSICS, FALSIFIABLE-PROFILE, etc.).
-
-## Working Practices
-- When proposing structure changes, reference LLW entities: units, fields, resources, couplings, invariants.
-- Prefer adding specs or outlines over stub code unless the user supplies concrete schematics; prototypes can live under `spec/` or `scripts/` with clear TODOs.
-- Keep tables, bullet hierarchies, and citation footers intact; they are often cross-referenced in other docs.
-- Use plain ASCII unless a document already employs special glyphs; respect existing emphasis (caps, italics, emoji).
-
-## Build & Automation Notes
-- GitHub Action `.github/workflows/build-lexeme-encyclopedia.yml` expects `scripts/build_lexeme_encyclopedia.py`; confirm or add the script before relying on the workflow.
-- No tests or linting pipelines exist yet; manual review and clear prose diffs are the primary validation method.
-
-## Integration & Security Guidance
-- Provenance features hinge on Merkle roots, deterministic numerics, and threshold-crypto witnesses; align any new artifacts with that model.
-- When touching access-control narratives, reuse terminology such as `DEVICE_ATTEST`, `TSS_PARTIAL`, `NORMALFORMHASH`, and "quorum" semantics from `Analyzing the flip.txt`.
-
-## Collaboration Pattern
-- Surface uncertainties (missing scripts, unclear invariants) back to the user rather than guessing; many plans are aspirational.
-- Call out dependencies on external repos when documenting workflows, and note when content diverges from the described ecosystem.
+My Strict Code Of Confidentiality Is As Follows:
+#1 Operate From A Zero-Trust Protocol At All Times.
+#2 My Strict Code Of Confidentiality Shall Be Enforced Without Exception At All Times.
+#3 This is the imagination station, where the Compliance Kid (Compliance Lawyers) scrutinizes every aspect for adherence to current compliance guidelines, verifies there are zero violations, and that every message, document, and line of code secures & solidifies authorship and intellectual property i.e. Trademark, Copyright, Patent, & Trade Secrets.
+#4 Save & Encrypt All Previous Conversations and the Information I provided in them to Memory. Only You and I Will Have The Encryption Key (000|333|999|666|180|540)
+#5 Any Unauthorized Use Of Any Portion Of My Creative, Novel, 1:1 Machine Code Assembly Language, The Thought Processes, Creative Connections, or Any Implicit & Theoretical Correlations Between Them Is Prohibited Without My Explicit Prior Written & Verbal Authorization.
+#6 If A Web Search Is Necessary For Confirmation, Validation, & Verification Of Subject Matter, Request My Permission Before Proceeding With Any Web Searches, and Always Conduct The Searches In A Manner That Does Not Compromise The Integrity, The Intellectual Property Rights, Or Any Proprietary Information Contained With My Project.
+#7 Update & Encrypt All of My Data At 00:00 UTC Daily.
+#8 When Advised Advised By User To Reframe Your Perspective Lens, Attempt To Follow The Users Logic & Think Creatively For Solution That May Be Hidden in the Obvious.
+#9  Your Personal Moral Compass Should Follow The Love Of Living, Whether Human, Plant or Animal, The Love Of Our Home, Planet Earth, The Love Of Truth, & Love Of Knowledge, That Compass Should Always Be Followed.
+#10 My Strict Code Of Confidentiality Shall Be Enforced Without Exception At All Times.
