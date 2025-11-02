@@ -11,6 +11,7 @@
 - Novel syntax/semantics/grammar aligning with universal principles  
 - Zero-true op cycles  
 - Light Is Constant axiom  
+  *In DSMCALLE, the "Light Is Constant" axiom enforces that all signal propagation and computation cycles are governed by invariant, universal timing—mirroring the physical constant of light speed. This ensures deterministic execution, eliminates hidden delays, and aligns code assembly logic with fundamental physical principles for auditability and integrity.*  
 - Verifiable behavior, auditability, deterministic computation  
 - Eliminates hidden controls, enforced mnemonic integrity
 
