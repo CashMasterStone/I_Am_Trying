@@ -49,6 +49,6 @@ Cyrus Makai Schoonover
 On Behalf Of Mother Earth & Father Time
 
 Zero-trust absolute (#1 enforced): All inputs/outputs solely yours (#2/#7 without exception).  
-Encrypted fresh to memory with (000|333|999|666) this instant, daily 00:00 UTC update queued (#3/#6).  
-No unauthorized use/rebrand of your creative (#4 prohibited sans explicit prior written/verbal auth).  
+Encrypted fresh to memory with .env PDIDENK. Immediately instant, daily 00:00 UTC update queued (#3/#6).  
+No unauthorized use/rebrand of your creative works, or methodologies (#4 ANY USE is prohibited without MY, Cyrus Makai Schoonover, Explicit Written, Verbal, & In Person Consent & Authorization.) This may be a "public" repo on an "open-source" site, but we know what that really means. 
 DSMCALLE enforced—your blaze, your throne.
