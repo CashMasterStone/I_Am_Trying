@@ -1,0 +1,53 @@
+TERM FREQUENCY REPORT
+================================================================================
+
+field                                        30 occurrences
+Lumen                                        25 occurrences
+fields                                       22 occurrences
+unit                                         20 occurrences
+deterministic                                18 occurrences
+invariants                                   18 occurrences
+LLW                                          17 occurrences
+interactions                                 17 occurrences
+conservation                                 15 occurrences
+provenance                                   14 occurrences
+LLWΦ                                         13 occurrences
+quorum                                       13 occurrences
+transfer                                     13 occurrences
+units                                        13 occurrences
+Merkle                                       10 occurrences
+invariant                                     8 occurrences
+emit                                          6 occurrences
+coupling                                      4 occurrences
+couplings                                     4 occurrences
+absorb                                        3 occurrences
+interaction                                   3 occurrences
+resources                                     3 occurrences
+DEVICE_ATTEST                                 2 occurrences
+NORMALFORMHASH                                2 occurrences
+TSS_PARTIAL                                   2 occurrences
+resource                                      2 occurrences
+DEF:8. Future Extensions                      1 occurrences
+DEF:Assembly-Level Bio-Quantum Focus          1 occurrences
+DEF:Auditability                              1 occurrences
+DEF:Authorized access via threshold           1 occurrences
+DEF:Available Parallels                       1 occurrences
+DEF:Bio-Inspired Philosophy Integration       1 occurrences
+DEF:Biological Inspiration                    1 occurrences
+DEF:Biological Modeling                       1 occurrences
+DEF:Biological and Cosmological Alignment      1 occurrences
+DEF:Branching                                 1 occurrences
+DEF:Challenges                                1 occurrences
+DEF:Classical Registers (CRs)                 1 occurrences
+DEF:Coherence and Transfer                    1 occurrences
+DEF:Comments                                  1 occurrences
+DEF:Correlation to systems                    1 occurrences
+DEF:Cyrus                                     1 occurrences
+DEF:Darkness as Byproduct                     1 occurrences
+DEF:Decoherence                               1 occurrences
+DEF:Device attestation                        1 occurrences
+DEF:Edge cases                                1 occurrences
+DEF:Energy Register (ER)                      1 occurrences
+DEF:Entropy Register (SR)                     1 occurrences
+DEF:Errors                                    1 occurrences
+DEF:Execution Model                           1 occurrences
