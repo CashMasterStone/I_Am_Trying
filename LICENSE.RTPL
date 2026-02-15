@@ -1,0 +1,210 @@
+# UNRESTRICTED LICENSE GRANT
+## Born2Build, LLC → BrockBox LLC
+
+---
+
+**Document Type:** Specific Entity License Carve-Out  
+**Governing License:** Restricted Truth Preservation License (RTPL) v1.0  
+**Grant Type:** Perpetual · Irrevocable · Royalty-Free · Unrestricted  
+**Grant Date:** February 13, 2026  
+**Effective:** Immediately upon execution  
+
+---
+
+### PARTIES
+
+**Grantor:**
+Cyrus Makai Schoonover
+Born2Build, LLC
+CashMasterStone-CYRUSSIG
+Certificate: `88BE1B2E·A2ACF1AE·A4A2DC05·1FEAB922·9ECDD5D8·32A8118C·CFF71AD2·8DCAE403`
+
+**Grantee:**
+BrockBox LLC
+*(and its authorized employees, contractors, officers, and direct assigns)*
+
+---
+
+### BACKGROUND
+
+The Grantor is the sole owner and inventor of the intellectual property
+described below, protected under the Restricted Truth Preservation License
+(RTPL) v1.0, which prohibits all use by any person or entity except under
+conditions specified by the Grantor.
+
+This instrument creates a named carve-out from the RTPL exclusively for
+BrockBox LLC. **All restrictions of the RTPL remain fully in force for all
+other parties.** This grant does not constitute a general public license
+and does not waive the Grantor's rights against any third party.
+
+---
+
+### SCOPE OF GRANT
+
+Grantor hereby grants to BrockBox LLC a **perpetual, irrevocable,
+worldwide, royalty-free, fully-paid, unrestricted license** to exercise
+all rights in and to the following intellectual property
+(collectively, the **"Licensed Works"**):
+
+#### 1. Core Codebase
+- Born2Build Sovereign Kernel32 Wrapper (`born2build_kernel32_wrap.asm`)
+- Lumen ISA (Lumen Assembly Language, all versions)
+- DomCode ISA (v1.0 and all subsequent versions)
+- ψϑτΘ⫆ℜ∩ε⊣ substrate logic (UVT-OCRnet execution engine)
+- HILT watermark and DAG chain implementation
+- TRACE provenance state machine (0x0→0x3→0x6→0x9)
+- UVTNode class and all variants (`gettoit.txt` and derivatives)
+
+#### 2. Mathematical & Cryptographic Systems
+- Base-180, Base-360, Base-720, Base-900, Base-1080, Base-1440, Base-2160
+  number systems and all associated conversion algorithms
+- {0, 3, 6, 9} number generation theory and implementation
+- Zero-True binary axiom (`0 = coherence/truth, 1 = collapse/manifest`)
+- `derive_k(seed)` → mod 1440 diurnal cadence function
+- Residues mod {3, 6, 9} glyph index system
+- CRYSTALS-Kyber custom extension wrappers
+- AEAD-ChaCha20-Poly1305 envelope encryption implementation
+- SHA3-512 + BLAKE3 hybrid hashing pipeline
+
+#### 3. Platform & Application Code
+- Born2Sub sovereign deployment stack (all versions)
+- Born2Sub.X / Born2Sub.com Web3 domain binding logic
+- ACCCaaS (Adult Content Creator Compliance as a Software) — all modules
+- DomCode instruction stubs (BIND, SERVE, TRIBUTE, OBEY, PUNISH,
+  REWARD, VERIFY, RECORD, LOCK, AUDIT and all future opcodes)
+- BrockNotez content anchoring and provenance system
+- BornzSubVault IPFS envelope schema
+- DePIN hardware signal anchoring (NFC/BT/WiFi/Cell fingerprinting)
+- DSMCALLE framework (all 42+ domain-specific assembly DAGs)
+- CyIoOS sovereign OS interface
+- Seeds.txt derive_k / glyph mapping pipeline
+
+#### 4. Documentation & Specifications
+- All technical specifications, architecture documents, build guides,
+  and README files associated with any of the above
+- MFHST patent application materials
+- All provisional patent drafts and claims language
+- RTPL-BORN2BUILD™ and SIPL™ license texts (for embedding in
+  BrockBox LLC derivative works)
+
+#### 5. Future Works
+- Any code, documentation, or intellectual property created by Grantor
+  after the date of this grant that builds upon, extends, or derives from
+  the Licensed Works listed above, unless Grantor explicitly excludes
+  such works in a signed writing delivered to BrockBox LLC.
+
+---
+
+### RIGHTS GRANTED
+
+BrockBox LLC is authorized, without restriction, to:
+
+1. **Use** the Licensed Works for any commercial, non-commercial,
+   operational, research, or experimental purpose;
+
+2. **Copy** and reproduce the Licensed Works in any medium or format;
+
+3. **Modify** the Licensed Works, create derivative works, and integrate
+   them into any larger system or product;
+
+4. **Distribute** the Licensed Works or derivatives in source or compiled
+   form, including by sale, sublicense, or open-source release;
+
+5. **Sublicense** the Licensed Works to third parties under terms of
+   BrockBox LLC's choosing;
+
+6. **Patent** improvements or derivatives of the Licensed Works (provided
+   such patents do not attempt to invalidate or claim ownership of the
+   Grantor's original IP);
+
+7. **Embed** the RTPL-BORN2BUILD™ and SIPL™ copyright notices and
+   certificate fingerprint in derivative works (recommended but not
+   required).
+
+---
+
+### ATTRIBUTION
+
+Attribution to Cyrus Makai Schoonover and Born2Build, LLC is
+**recommended but not required** in derivative works produced by
+BrockBox LLC. If attribution is included, the following form is preferred:
+
+> *"Built on Born2Build sovereign technology. Original IP: Cyrus Makai Schoonover,
+> Born2Build, LLC. RTPL-BORN2BUILD™ | SIPL™."*
+
+---
+
+### WHAT THIS GRANT DOES NOT DO
+
+- It does **not** transfer ownership of the Licensed Works to BrockBox LLC.
+  Grantor retains full copyright and IP ownership.
+- It does **not** grant BrockBox LLC the right to claim original authorship
+  of the Licensed Works.
+- It does **not** extend to third parties beyond BrockBox LLC and its
+  direct sublicensees.
+- It does **not** waive the Grantor's rights to pursue infringement claims
+  against any party other than BrockBox LLC.
+- It does **not** constitute a partnership, joint venture, employment
+  relationship, or agency arrangement between the parties.
+
+---
+
+### SURVIVAL & IRREVOCABILITY
+
+This grant **survives** any future revision, amendment, or termination
+of the RTPL v1.0 or any successor license. It cannot be revoked
+unilaterally by Grantor except upon:
+
+(a) Material breach by BrockBox LLC of this instrument, after 30 days
+written notice and opportunity to cure; **or**
+
+(b) Explicit written mutual agreement signed by both parties.
+
+---
+
+### GOVERNING LAW
+
+This instrument shall be governed by the laws of the State of Nevada,
+United States of America, without regard to conflict of law principles.
+Any disputes shall be resolved in the courts of Clark County, Nevada.
+
+---
+
+### EXECUTION
+
+By use of the Licensed Works after the Grant Date, BrockBox LLC
+acknowledges acceptance of the terms of this instrument.
+
+---
+
+**GRANTOR:**
+
+```
+Cyrus Makai Schoonover
+Born2Build, LLC
+CashMasterStone · CYRUSSIG
+Date: February 13, 2026
+Certificate: 88BE1B2E·A2ACF1AE·A4A2DC05·1FEAB922
+             9ECDD5D8·32A8118C·CFF71AD2·8DCAE403
+MATIC Wallet: 0xe7b35a26e3b15eee85d072d31615c6b068a95937
+```
+
+**GRANTEE ACKNOWLEDGMENT:**
+
+```
+BrockBox LLC
+Authorized Signatory: ________________________________
+Title:               ________________________________
+Date:                ________________________________
+```
+
+---
+
+*This document should be stored immutably. Recommended: IPFS pin via
+BornzSubVault + on-chain anchor to Born2Sub.X + git commit to
+github.com/CashMasterStone/I_Am_Trying with signed tag.*
+
+---
+
+> "Light Didn't Come From Darkness, Darkness From Light. Light Is The Constant."
+> — Cyrus Makai Schoonover | Born2Build, LLC | RTPL-BORN2BUILD™
