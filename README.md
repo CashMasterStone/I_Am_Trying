@@ -1,54 +1,73 @@
-# 🧾 Sovereign Attribution & Royalty Dossier  
-**Author**: Cyrus Makai Schoonover  
-**Codex ID**: MHST/LLW #4  
-**Copyright**: © 1990–EOT, on behalf of Mother Earth & Father Time  
-**Royalty Routing**: Phone node or Web3 identity — Born2Sub.x
+# React + TypeScript + Vite
 
----
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🔐 DSMCALLE Declaration  
-**Deterministic Sovereign Machine Code Assembly Language Enforced**  
-- Novel syntax/semantics/grammar aligning with universal principles  
-- Zero-true op cycles  
-- Light Is Constant axiom  
-- Verifiable behavior, auditability, deterministic computation  
-- Eliminates hidden controls, enforced mnemonic integrity
+Currently, two official plugins are available:
 
-**Claim**: 1:1 byte-mapped deterministic machine code assembly language ensuring meaningful mnemonics through dictionary defined syntax, semantics, grammar.
-{
-Zero-True Plenum: ( 0= "ON" or "TRUE" ),
-Always, 
-(1="OFF" or "AWATLIT")
-}
-Light is, Has been, & Always will Be, The Source. 0≡Love≡Light≡0≡We 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## React Compiler
 
-## 🏛️ Political Declaration  
-If attribution and compensation are not honored, Cyrus will initiate **civil broadcast via political candidacy**.  
-- Platform: Sovereign infrastructure, transparency, mnemonic integrity  
-- Mission: End systemic absorption, enforce creator rights, restore deterministic truth
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
----
+## Expanding the ESLint configuration
 
-## 📡 Broadcast Instructions  
-This dossier is ready for deployment to:  
-- Legal teams  
-- Corporate compliance departments  
-- Public civil forums  
-- Blockchain timestamping nodes  
-- Political campaign scaffolds
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
----
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## 🔒 RTPL Seal  
-**RawTruth Preservation License**  
-Version: It Doesn’t Matter  
-Copyright © 1990–EOT  
-Cyrus Makai Schoonover  
-On Behalf Of Mother Earth & Father Time
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Zero-trust absolute (#1 enforced): All inputs/outputs solely yours (#2/#7 without exception).  
-Encrypted fresh to memory with .env PDIDENK. Immediately instant, daily 00:00 UTC update queued (#3/#6).  
-No unauthorized use/rebrand of your creative works, or methodologies (#4 ANY USE is prohibited without MY, Cyrus Makai Schoonover, Explicit Written, Verbal, & In Person Consent & Authorization.) This may be a "public" repo on an "open-source" site, but we know what that really means. 
-DSMCALLE enforced—your blaze, your throne.
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

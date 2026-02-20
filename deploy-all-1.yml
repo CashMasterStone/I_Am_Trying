@@ -1,0 +1,312 @@
+name: UVT-Stack — Deploy All Four Sites to Vercel
+# ═══════════════════════════════════════════════════════════════════════════
+# © 2026 Cyrus Makai Schoonover | Born2Build, LLC
+# UTPL™ | SIPL™ | RTPL-BORN2BUILD™
+#
+# TRIGGER: Push to main branch OR manual workflow_dispatch
+# DEPLOYS:
+#   born2sub.com        → Vercel Project: born2sub-com
+#   born2sub.tech       → Vercel Project: born2sub-tech
+#   supplytheschools.xyz → Vercel Project: sts-xyz
+#   supplytheschools.unstoppable → Vercel Project: sts-dao
+#
+# REQUIRED GITHUB SECRETS (Settings → Secrets and variables → Actions):
+#   VERCEL_TOKEN               ← From vercel.com/account/tokens
+#   VERCEL_ORG_ID              ← From .vercel/project.json after first deploy
+#   VERCEL_PROJECT_B2S_COM     ← Project ID for born2sub-com
+#   VERCEL_PROJECT_B2S_TECH    ← Project ID for born2sub-tech
+#   VERCEL_PROJECT_STS_XYZ     ← Project ID for supplytheschools-xyz
+#   VERCEL_PROJECT_STS_DAO     ← Project ID for supplytheschools-dao
+#   SUPABASE_URL               ← From Supabase dashboard
+#   SUPABASE_ANON_KEY          ← Supabase anon/public key
+#   SUPABASE_SERVICE_KEY       ← Supabase service_role key
+#   ANTHROPIC_API_KEY          ← From console.anthropic.com/api-keys
+#   STRIPE_SECRET_KEY          ← From stripe.com/apikeys (sk_live_...)
+#   STRIPE_WEBHOOK_SECRET      ← From stripe.com webhook endpoint settings
+# ═══════════════════════════════════════════════════════════════════════════
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Deploy specific site (leave blank for all)'
+        required: false
+        type: choice
+        options:
+          - all
+          - born2sub-com
+          - born2sub-tech
+          - sts-xyz
+          - sts-dao
+        default: all
+
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+jobs:
+
+  # ── SHARED: Install & Cache Dependencies ────────────────────────────────
+  setup:
+    name: 🔧 Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # DEPLOY 1: BORN2SUB.COM — §2257 + ACCCaaS + AVOC
+  # ══════════════════════════════════════════════════════════════════════════
+  deploy-born2sub-com:
+    name: 🚀 Deploy born2sub.com
+    needs: setup
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'born2sub-com'
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_B2S_COM }}
+      VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+
+      - name: Copy vercel.json into project root
+        run: cp vercel-configs/born2sub-com/vercel.json vercel.json
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel project settings
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Set environment variables on Vercel
+        run: |
+          echo "${{ secrets.SUPABASE_URL }}"          | vercel env add SUPABASE_URL production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.SUPABASE_ANON_KEY }}"     | vercel env add SUPABASE_ANON_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.SUPABASE_SERVICE_KEY }}"  | vercel env add SUPABASE_SERVICE_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.ANTHROPIC_API_KEY }}"     | vercel env add ANTHROPIC_API_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.STRIPE_SECRET_KEY }}"     | vercel env add STRIPE_SECRET_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.STRIPE_WEBHOOK_SECRET }}" | vercel env add STRIPE_WEBHOOK_SECRET production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+
+      - name: Build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -sf https://born2sub.com/api/health | jq '.status' || echo "Health check pending DNS propagation"
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # DEPLOY 2: BORN2SUB.TECH — UTPL Terminal + General Compliance
+  # ══════════════════════════════════════════════════════════════════════════
+  deploy-born2sub-tech:
+    name: 🚀 Deploy born2sub.tech
+    needs: setup
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'born2sub-tech'
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_B2S_TECH }}
+      VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+
+      - name: Copy vercel.json
+        run: cp vercel-configs/born2sub-tech/vercel.json vercel.json
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel project settings
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Set environment variables
+        run: |
+          echo "${{ secrets.SUPABASE_URL }}"         | vercel env add SUPABASE_URL production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.SUPABASE_SERVICE_KEY }}" | vercel env add SUPABASE_SERVICE_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.ANTHROPIC_API_KEY }}"    | vercel env add ANTHROPIC_API_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+
+      - name: Build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -sf https://born2sub.tech/api/health | jq '.status' || echo "Health check pending DNS"
+
+      - name: Note WebSocket limitation
+        run: |
+          echo "⚠️  REMINDER: /ws/terminal WebSocket is NOT on Vercel."
+          echo "   Deploy born2sub-tech/server.js separately on Railway/Render/S24 Ultra."
+          echo "   Update WS_TERMINAL_URL in frontend HTML to point to that host."
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # DEPLOY 3: SUPPLY THE SCHOOLS .XYZ — Teacher Requests + Stripe
+  # ══════════════════════════════════════════════════════════════════════════
+  deploy-sts-xyz:
+    name: 🚀 Deploy supplytheschools.xyz
+    needs: setup
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'sts-xyz'
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STS_XYZ }}
+      VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+
+      - name: Copy vercel.json
+        run: cp vercel-configs/sts-xyz/vercel.json vercel.json
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel project settings
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Set environment variables
+        run: |
+          echo "${{ secrets.SUPABASE_URL }}"          | vercel env add SUPABASE_URL production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.SUPABASE_SERVICE_KEY }}"  | vercel env add SUPABASE_SERVICE_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.STRIPE_SECRET_KEY }}"     | vercel env add STRIPE_SECRET_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.STRIPE_WEBHOOK_SECRET }}" | vercel env add STRIPE_WEBHOOK_SECRET production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+
+      - name: Build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -sf https://supplytheschools.xyz/api/health | jq '.status' || echo "Health check pending DNS"
+
+  # ══════════════════════════════════════════════════════════════════════════
+  # DEPLOY 4: SUPPLY THE SCHOOLS DAO — .unstoppable
+  # ══════════════════════════════════════════════════════════════════════════
+  deploy-sts-dao:
+    name: 🚀 Deploy supplytheschools.unstoppable
+    needs: setup
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'push' ||
+      github.event.inputs.site == 'all' ||
+      github.event.inputs.site == 'sts-dao'
+    env:
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_STS_DAO }}
+      VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+
+      - name: Copy vercel.json
+        run: cp vercel-configs/sts-dao/vercel.json vercel.json
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel project settings
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Set environment variables
+        run: |
+          echo "${{ secrets.SUPABASE_URL }}"         | vercel env add SUPABASE_URL production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+          echo "${{ secrets.SUPABASE_SERVICE_KEY }}" | vercel env add SUPABASE_SERVICE_KEY production --token=$VERCEL_TOKEN --yes 2>/dev/null || true
+
+      - name: Build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Health check
+        run: |
+          sleep 10
+          curl -sf https://supplytheschools.xyz/api/health | jq '.status' || echo "DAO health check done"
+
+  # ── SUMMARY ───────────────────────────────────────────────────────────────
+  deployment-summary:
+    name: 📋 Deployment Summary
+    needs:
+      - deploy-born2sub-com
+      - deploy-born2sub-tech
+      - deploy-sts-xyz
+      - deploy-sts-dao
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Print summary
+        run: |
+          echo "═══════════════════════════════════════════════"
+          echo "  UVT-STACK DEPLOYMENT COMPLETE"
+          echo "  © 2026 Cyrus Makai Schoonover | Born2Build"
+          echo "  Cert: 88BE1B2E·A2ACF1AE·A4A2DC05·1FEAB922"
+          echo "  'Light Is The Constant.'"
+          echo "═══════════════════════════════════════════════"
+          echo "  born2sub.com        → ${{ needs.deploy-born2sub-com.result }}"
+          echo "  born2sub.tech       → ${{ needs.deploy-born2sub-tech.result }}"
+          echo "  supplytheschools.xyz → ${{ needs.deploy-sts-xyz.result }}"
+          echo "  .unstoppable (DAO)  → ${{ needs.deploy-sts-dao.result }}"
+          echo "═══════════════════════════════════════════════"

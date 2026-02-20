@@ -1,0 +1,265 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Born2Sub.X Ecosystem - Custom Theme */
+:root {
+  /* Born2Sub Brand Colors */
+  --b2s-primary: #00ff41;
+  --b2s-primary-dark: #00cc33;
+  --b2s-primary-glow: rgba(0, 255, 65, 0.4);
+  --b2s-bg: #0a0a0a;
+  --b2s-bg-elevated: #111111;
+  --b2s-surface: rgba(255, 255, 255, 0.03);
+  --b2s-border: rgba(255, 255, 255, 0.08);
+  
+  /* BrockBox Brand Colors */
+  --bb-accent: #3b82f6;
+  --bb-accent-glow: rgba(59, 130, 246, 0.4);
+  --bb-physics: #f59e0b;
+  
+  /* TRACE State Colors */
+  --trace-init: #00ff41;
+  --trace-process: #00cc33;
+  --trace-align: #00aa22;
+  --trace-complete: #008811;
+  
+  /* Chain Colors */
+  --chain-solana: #9945ff;
+  --chain-ethereum: #627eea;
+  --chain-polygon: #8247e5;
+  --chain-base: #0052ff;
+  --chain-bitcoin: #f7931a;
+  --chain-sonic: #f4f4f5;
+  
+  /* shadcn overrides */
+  --background: 0 0% 4%;
+  --foreground: 0 0% 88%;
+  --card: 0 0% 7%;
+  --card-foreground: 0 0% 88%;
+  --popover: 0 0% 7%;
+  --popover-foreground: 0 0% 88%;
+  --primary: 142 100% 50%;
+  --primary-foreground: 0 0% 4%;
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 88%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 217 91% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 142 100% 50%;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#0a0a0a] text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  ::selection {
+    background: rgba(0, 255, 65, 0.3);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Neon Glow Effects */
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4),
+                0 0 40px rgba(0, 255, 65, 0.2);
+  }
+  
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+                0 0 40px rgba(59, 130, 246, 0.2);
+  }
+  
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.6),
+                 0 0 20px rgba(0, 255, 65, 0.4);
+  }
+  
+  /* Gradient Borders */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(59, 130, 246, 0.1));
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #00ff41, #3b82f6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  
+  /* TRACE State Indicators */
+  .trace-active {
+    @apply relative;
+  }
+  
+  .trace-active::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #00ff41;
+    animation: trace-pulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes trace-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.5; }
+  }
+  
+  /* Terminal/Log Styles */
+  .terminal {
+    @apply bg-black/50 rounded-lg p-4 font-mono text-sm;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+  }
+  
+  .terminal-line {
+    @apply mb-1;
+  }
+  
+  .terminal-timestamp {
+    @apply text-gray-500;
+  }
+  
+  .terminal-success {
+    @apply text-[#00ff41];
+  }
+  
+  .terminal-info {
+    @apply text-blue-400;
+  }
+  
+  .terminal-trace {
+    @apply text-[#00cc33];
+  }
+  
+  /* Chain Badges */
+  .chain-badge {
+    @apply px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .chain-solana { @apply bg-[#9945ff]/20 text-[#9945ff] border border-[#9945ff]/30; }
+  .chain-ethereum { @apply bg-[#627eea]/20 text-[#627eea] border border-[#627eea]/30; }
+  .chain-polygon { @apply bg-[#8247e5]/20 text-[#8247e5] border border-[#8247e5]/30; }
+  .chain-base { @apply bg-[#0052ff]/20 text-[#0052ff] border border-[#0052ff]/30; }
+  .chain-bitcoin { @apply bg-[#f7931a]/20 text-[#f7931a] border border-[#f7931a]/30; }
+  .chain-sonic { @apply bg-[#f4f4f5]/20 text-[#f4f4f5] border border-[#f4f4f5]/30; }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 65, 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 65, 0.5);
+  }
+  
+  /* Animations */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+  
+  @keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  .animate-slide-in {
+    animation: slide-in-right 0.4s ease-out forwards;
+  }
+  
+  /* Status Indicators */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+  
+  .status-online {
+    @apply bg-[#00ff41];
+    box-shadow: 0 0 8px #00ff41;
+  }
+  
+  .status-pending {
+    @apply bg-yellow-500;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  .status-offline {
+    @apply bg-red-500;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+}
